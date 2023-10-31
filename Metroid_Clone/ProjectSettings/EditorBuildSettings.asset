@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/End.unity
     guid: edacf31089be09644a9d251177a5eae5
   - enabled: 1
-    path: Assets/Scenes/Player.unity
-    guid: 44b64fb08b549f34699542de86320f83
+    path: Assets/Scenes/Logan's Scene.unity
+    guid: 35b217c3899563f4db606c9be2516b1e
   - enabled: 1
     path: Assets/Scenes/Start.unity
     guid: 4dac121c193c42b44974812690bec214
