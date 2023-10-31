@@ -10,15 +10,17 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed = 10;
-    public Rigidbody rigidBodyRef;
+    private Rigidbody rigidBodyRef;
     public float jumpForce = 3f;
     public int lives = 3;
+    public GameObject playerWeapon;
 
     private bool facingRight = true;
 
     void Start()
     {
-        
+        rigidBodyRef = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -26,11 +28,13 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
+            transform.rotation = Quaternion.Euler(new Vector3 (0f, 0f, 0f));
             facingRight = true;
             transform.position += Vector3.right * speed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
+            transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
             facingRight = false;
             transform.position += Vector3.left * speed * Time.deltaTime;
         }
