@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 /* Sharkey, Logan
  * 10/26/2023
  * All the code that retains to the player 
@@ -52,12 +52,13 @@ public class Player : MonoBehaviour
             //Checks if player is touching the ground, if not, then jump. 
             rigidBodyRef.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
-
-
-
     }
 
-
+    public void LoseALife()
+    {
+        lives--;
+        if (lives == 0) SceneManager.LoadScene(2);
+    }
 
 
 
