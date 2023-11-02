@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     private Rigidbody rigidBodyRef;
     public float jumpForce = 3f;
     public int lives = 3;
+    public int healthPoints = 99;
     public GameObject playerWeapon;
 
     private bool facingRight = true;
