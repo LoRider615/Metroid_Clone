@@ -480,6 +480,7 @@ MonoBehaviour:
   lives: 3
   healthPoints: 99
   playerWeapon: {fileID: 828105723}
+  BulletPrefab: {fileID: 0}
 --- !u!136 &951804911
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -847,6 +848,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 6447232412723336282, guid: 1beeb0b0e6e16c04aa49c2e0373021f7, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -903,6 +908,10 @@ PrefabInstance:
     - target: {fileID: 8728770459757946964, guid: ab9a381bbe2c2c742892b4731a60a951, type: 3}
       propertyPath: m_Name
       value: Heavy Bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728770459757946964, guid: ab9a381bbe2c2c742892b4731a60a951, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
