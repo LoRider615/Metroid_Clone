@@ -44,7 +44,10 @@ public class Player : MonoBehaviour
         {
             HandleJump();
         }
-
+        if (Input.GetKey(KeyCode.KeypadEnter))
+        {
+            ShootABullet(facingRight);
+        }
 
 
     }
