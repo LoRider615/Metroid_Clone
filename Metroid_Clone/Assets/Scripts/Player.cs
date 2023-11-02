@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public int healthPoints = 99;
     public GameObject playerWeapon;
 
+    public GameObject BulletPrefab;
     private bool facingRight = true;
 
     void Start()
@@ -27,13 +28,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D))
         {
             transform.rotation = Quaternion.Euler(new Vector3 (0f, 0f, 0f));
             facingRight = true;
             transform.position += Vector3.right * speed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A))
         {
             transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
             facingRight = false;
@@ -43,6 +44,9 @@ public class Player : MonoBehaviour
         {
             HandleJump();
         }
+
+
+
     }
 
     private void HandleJump()
@@ -61,6 +65,11 @@ public class Player : MonoBehaviour
         if (lives == 0) SceneManager.LoadScene(2);
     }
 
+    private void ShootABullet(bool shootRight)
+    {
+        GameObject BulletInstance = Instantiate(BulletPrefab, transform.position, transform.rotation);
+        BulletInstance.GetComponent<Bullet>().goingRight = shootRight;
+    }
 
 
 }
