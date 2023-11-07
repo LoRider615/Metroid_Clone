@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
             StartCoroutine(ShootABullet(false));
         }
 
-
+        loseHP();
     }
 
     private void HandleJump()
@@ -72,10 +72,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void LoseALife()
+    public void loseHP()
     { 
-        lives--;
-        if (lives == 0) SceneManager.LoadScene(2);
+        if (healthPoints == 0) SceneManager.LoadScene(2);
     }
 
     IEnumerator ShootABullet(bool shootRight)
