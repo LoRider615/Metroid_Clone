@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public int lives = 3;
     public int healthPoints = 99;
     public GameObject playerWeapon;
+    private Vector3 startPosition;
 
     public GameObject BulletPrefab;
     private bool facingRight = true;
@@ -22,7 +23,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rigidBodyRef = GetComponent<Rigidbody>();
-
+        startPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -74,5 +75,13 @@ public class Player : MonoBehaviour
         BulletInstance.GetComponent<Bullet>().goingRight = shootRight;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Door A")
+        {
+            transform.position = other.gameObject.GetComponent<Door>().teleportPoint.transform.position;
+            startPosition = transform.position;
+        }
+    }
 
 }
