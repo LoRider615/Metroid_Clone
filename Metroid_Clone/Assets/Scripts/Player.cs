@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public int healthPoints = 99;
     public GameObject playerWeapon;
     private Vector3 startPosition;
+    private bool allowFire = true;
 
     public GameObject BulletPrefab;
     private bool facingRight = true;
@@ -45,9 +46,17 @@ public class Player : MonoBehaviour
         {
             HandleJump();
         }
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) && allowFire)
         {
-            ShootABullet(facingRight);
+            StartCoroutine(ShootABullet(facingRight));
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow) && allowFire)
+        {
+            StartCoroutine(ShootABullet(true));
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && allowFire)
+        {
+            StartCoroutine(ShootABullet(false));
         }
 
 
@@ -69,10 +78,13 @@ public class Player : MonoBehaviour
         if (lives == 0) SceneManager.LoadScene(2);
     }
 
-    private void ShootABullet(bool shootRight)
+    IEnumerator ShootABullet(bool shootRight)
     {
+        allowFire = false;
         GameObject BulletInstance = Instantiate(BulletPrefab, playerWeapon.transform.position, playerWeapon.transform.rotation);
         BulletInstance.GetComponent<Bullet>().goingRight = shootRight;
+        yield return new WaitForSeconds(0.5f);
+        allowFire = true;
     }
 
     private void OnTriggerEnter(Collider other)
