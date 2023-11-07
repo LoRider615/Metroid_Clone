@@ -26,4 +26,13 @@ public class Bullet : MonoBehaviour
             transform.position += Vector3.left * speed * Time.deltaTime;
         }
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag != "Player")
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

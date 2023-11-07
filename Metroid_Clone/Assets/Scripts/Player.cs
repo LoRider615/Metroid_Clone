@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
         {
             HandleJump();
         }
-        if (Input.GetKey(KeyCode.KeypadEnter))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             ShootABullet(facingRight);
         }
@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
 
     private void ShootABullet(bool shootRight)
     {
-        GameObject BulletInstance = Instantiate(BulletPrefab, transform.position, transform.rotation);
+        GameObject BulletInstance = Instantiate(BulletPrefab, playerWeapon.transform.position, playerWeapon.transform.rotation);
         BulletInstance.GetComponent<Bullet>().goingRight = shootRight;
     }
 

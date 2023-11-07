@@ -480,7 +480,7 @@ MonoBehaviour:
   lives: 3
   healthPoints: 99
   playerWeapon: {fileID: 828105723}
-  BulletPrefab: {fileID: 0}
+  BulletPrefab: {fileID: 6447232412723336282, guid: 1beeb0b0e6e16c04aa49c2e0373021f7, type: 3}
 --- !u!136 &951804911
 CapsuleCollider:
   m_ObjectHideFlags: 0
