@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
     }
 
     public void LoseALife()
-    {
+    { 
         lives--;
         if (lives == 0) SceneManager.LoadScene(2);
     }
