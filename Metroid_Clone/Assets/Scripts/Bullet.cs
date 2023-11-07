@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed;
     public bool goingRight;
+    
 
 
     // Start is called before the first frame update
@@ -27,12 +28,13 @@ public class Bullet : MonoBehaviour
         }
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag != "Player")
+        if (other.gameObject.tag != "Player")
         {
             Destroy(this.gameObject);
         }
     }
+
+
 }
