@@ -15,4 +15,13 @@ public class HeavyBulletPickup : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
+
 }
