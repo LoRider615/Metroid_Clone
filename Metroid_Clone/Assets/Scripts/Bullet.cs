@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/* Sharkey, Logan
+ * 11/10/23
+ * Script for regular bullets
+ */
 
 public class Bullet : MonoBehaviour
 {

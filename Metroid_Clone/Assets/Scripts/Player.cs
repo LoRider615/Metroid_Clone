@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 /* Sharkey, Logan
- * 10/26/2023
- * All the code that retains to the player 
- */
+* 10/26/2023
+* All the code that retains to the player 
+*/
 
 public class Player : MonoBehaviour
 {
@@ -21,9 +22,15 @@ public class Player : MonoBehaviour
     private bool facingRight = true;
     public GameObject HeavyBulletPrefab;
     private bool heavyBullets = false;
+    private bool recentDamage = false;
+
+    Renderer playerRen;
+    Renderer weaponRen;
 
     void Start()
     {
+        playerRen = GetComponent<Renderer>();
+        weaponRen = playerWeapon.GetComponent<Renderer>();
         rigidBodyRef = GetComponent<Rigidbody>();
         startPosition = transform.position;
     }
@@ -33,18 +40,21 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D))
         {
+            //Turns and moves the character right
             transform.rotation = Quaternion.Euler(new Vector3 (0f, 0f, 0f));
             facingRight = true;
             transform.position += Vector3.right * speed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.A))
         {
+            //Turns and moves the character left
             transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
             facingRight = false;
             transform.position += Vector3.left * speed * Time.deltaTime;
         }
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
         {
+            //Jumps
             HandleJump();
         }
         if (Input.GetKeyDown(KeyCode.Return) && allowFire)
@@ -55,16 +65,16 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.RightArrow) && allowFire)
         {
+            //Shoot to the right
             if (heavyBullets) StartCoroutine(ShootHeavyBullet(true));
             else StartCoroutine(ShootABullet(true));
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow) && allowFire)
         {
+            //Shoot to the left
             if (heavyBullets) StartCoroutine(ShootHeavyBullet(false));
             else StartCoroutine(ShootABullet(false));
         }
-
-        loseHP();
     }
 
     private void HandleJump()
@@ -77,7 +87,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void loseHP()
+    public void gameOver()
     { 
         if (healthPoints == 0) SceneManager.LoadScene(2);
     }
@@ -111,6 +121,27 @@ public class Player : MonoBehaviour
         {
             heavyBullets = true;
         }
+        if (other.gameObject.tag == "Enemy" && recentDamage == false)
+        {
+            recentDamage = true;
+            healthPoints -= 15;
+            gameOver();
+            StartCoroutine(DamageBlink());
+        }
+    }
+
+    IEnumerator DamageBlink()
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            playerRen.enabled = false;
+            weaponRen.enabled = false;
+            yield return new WaitForSeconds(0.3f);
+            playerRen.enabled = true;
+            weaponRen.enabled = true;
+            yield return new WaitForSeconds(0.3f);
+        }
+        recentDamage = false;
     }
 
 }
