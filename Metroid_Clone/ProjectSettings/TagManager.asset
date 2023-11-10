@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - Heavy Bullet
   - Door A
+  - HeavyBulletItem
   layers:
   - Default
   - TransparentFX

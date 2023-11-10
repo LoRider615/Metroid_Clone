@@ -17,9 +17,10 @@ public class Player : MonoBehaviour
     public GameObject playerWeapon;
     private Vector3 startPosition;
     private bool allowFire = true;
-
     public GameObject BulletPrefab;
     private bool facingRight = true;
+    public GameObject HeavyBulletPrefab;
+    private bool heavyBullets = false;
 
     void Start()
     {
@@ -42,21 +43,25 @@ public class Player : MonoBehaviour
             facingRight = false;
             transform.position += Vector3.left * speed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
         {
             HandleJump();
         }
         if (Input.GetKeyDown(KeyCode.Return) && allowFire)
         {
-            StartCoroutine(ShootABullet(facingRight));
+            //Shoot in the direction the player is facing
+            if (heavyBullets) StartCoroutine(ShootHeavyBullet(facingRight));
+            else StartCoroutine(ShootABullet(facingRight));
         }
         if (Input.GetKeyDown(KeyCode.RightArrow) && allowFire)
         {
-            StartCoroutine(ShootABullet(true));
+            if (heavyBullets) StartCoroutine(ShootHeavyBullet(true));
+            else StartCoroutine(ShootABullet(true));
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow) && allowFire)
         {
-            StartCoroutine(ShootABullet(false));
+            if (heavyBullets) StartCoroutine(ShootHeavyBullet(false));
+            else StartCoroutine(ShootABullet(false));
         }
 
         loseHP();
@@ -77,6 +82,15 @@ public class Player : MonoBehaviour
         if (healthPoints == 0) SceneManager.LoadScene(2);
     }
 
+    IEnumerator ShootHeavyBullet(bool shootRight)
+    {
+        allowFire = false;
+        GameObject HeavyBulletInstance = Instantiate(HeavyBulletPrefab, playerWeapon.transform.position, playerWeapon.transform.rotation);
+        HeavyBulletInstance.GetComponent<HeavyBullet>().goingRight = shootRight;
+        yield return new WaitForSeconds(0.5f);
+        allowFire = true;
+    }
+
     IEnumerator ShootABullet(bool shootRight)
     {
         allowFire = false;
@@ -92,6 +106,10 @@ public class Player : MonoBehaviour
         {
             transform.position = other.gameObject.GetComponent<Door>().teleportPoint.transform.position;
             startPosition = transform.position;
+        }
+        if (other.gameObject.tag == "HeavyBulletItem")
+        {
+            heavyBullets = true;
         }
     }
 
