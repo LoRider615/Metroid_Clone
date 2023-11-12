@@ -10,6 +10,10 @@ TagManager:
   - Heavy Bullet
   - Door A
   - HeavyBulletItem
+  - Jetpack
+  - HardEnemy
+  - HealthPickup
+  - HealthBoost
   layers:
   - Default
   - TransparentFX

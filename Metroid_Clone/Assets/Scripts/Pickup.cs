@@ -6,8 +6,11 @@ using UnityEngine;
  * Script for item that unlocks heavy bullets
  */
 
-public class HeavyBulletPickup : MonoBehaviour
+public class Pickup : MonoBehaviour
 {
+    public int playerHeal = 0;
+
+
     // Start is called before the first frame update
     void Start()
     {

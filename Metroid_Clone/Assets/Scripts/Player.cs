@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     private Rigidbody rigidBodyRef;
     public float jumpForce = 3f;
     public int lives = 3;
+    public int maxHP = 99;
     public int healthPoints = 99;
     public GameObject playerWeapon;
     private Vector3 startPosition;
@@ -75,6 +76,10 @@ public class Player : MonoBehaviour
             if (heavyBullets) StartCoroutine(ShootHeavyBullet(false));
             else StartCoroutine(ShootABullet(false));
         }
+        if (healthPoints > maxHP)
+        {
+            healthPoints = maxHP;
+        }
     }
 
     private void HandleJump()
@@ -128,6 +133,19 @@ public class Player : MonoBehaviour
             gameOver();
             StartCoroutine(DamageBlink());
         }
+        if (other.gameObject.tag == "Jetpack")
+        {
+            jumpForce += 3;
+        }
+        if (other.gameObject.tag == "HealthPickup")
+        {
+            healthPoints += other.gameObject.GetComponent<Pickup>().playerHeal;
+        }
+        if (other.gameObject.tag == "HealthBoost")
+        {
+            maxHP = 199;
+            healthPoints = maxHP;
+        }
     }
 
     IEnumerator DamageBlink()
@@ -144,4 +162,14 @@ public class Player : MonoBehaviour
         recentDamage = false;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "HardEnemy" && recentDamage == false)
+        {
+            recentDamage = true;
+            healthPoints -= 35;
+            gameOver();
+            StartCoroutine(DamageBlink());
+        }
+    }
 }
