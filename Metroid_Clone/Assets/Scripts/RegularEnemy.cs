@@ -55,7 +55,7 @@ public class RegularEnemy : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        if (other.gameObject.tag == "Heavy Bullet")
+        if (other.gameObject.tag == "Heavy Bullet") 
         {
             Destroy(this.gameObject);
         }
