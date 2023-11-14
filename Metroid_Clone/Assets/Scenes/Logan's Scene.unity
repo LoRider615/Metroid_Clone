@@ -4808,7 +4808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7adff0300b445094293e9add03527d4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 7092411817593145305}
   healthText: {fileID: 1380406640}
 --- !u!114 &1083101040
 MonoBehaviour:
@@ -8923,6 +8923,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 028ede032152dcb47830157f5f196d81, type: 3}
+--- !u!114 &7092411817593145305 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5490291724152372079, guid: 028ede032152dcb47830157f5f196d81, type: 3}
+  m_PrefabInstance: {fileID: 7092411817593145304}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfa0520a7469a01429ec690f3c706f92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
