@@ -51,7 +51,11 @@ public class RegularEnemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Bullet" || other.gameObject.tag == "HeavyBullet")
+        if (other.gameObject.tag == "Bullet") 
+        {
+            Destroy(this.gameObject);
+        }
+        if (other.gameObject.tag == "Heavy Bullet")
         {
             Destroy(this.gameObject);
         }
