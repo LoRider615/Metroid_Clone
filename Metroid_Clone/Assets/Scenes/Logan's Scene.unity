@@ -414,7 +414,7 @@ PrefabInstance:
     - target: {fileID: 268261017464736734, guid: 31954ab24092d2b4d9ec38ec6f860ad5, type: 3}
       propertyPath: playerRef
       value: 
-      objectReference: {fileID: 3598700777036703483, guid: 028ede032152dcb47830157f5f196d81, type: 3}
+      objectReference: {fileID: 1952508966}
     - target: {fileID: 3010967636647979201, guid: 31954ab24092d2b4d9ec38ec6f860ad5, type: 3}
       propertyPath: m_Name
       value: Hard Enemy (7)
@@ -1775,7 +1775,7 @@ PrefabInstance:
     - target: {fileID: 268261017464736734, guid: 31954ab24092d2b4d9ec38ec6f860ad5, type: 3}
       propertyPath: playerRef
       value: 
-      objectReference: {fileID: 3598700777036703483, guid: 028ede032152dcb47830157f5f196d81, type: 3}
+      objectReference: {fileID: 1952508966}
     - target: {fileID: 3010967636647979201, guid: 31954ab24092d2b4d9ec38ec6f860ad5, type: 3}
       propertyPath: m_Name
       value: Hard Enemy (3)
@@ -2868,7 +2868,7 @@ PrefabInstance:
     - target: {fileID: 268261017464736734, guid: 31954ab24092d2b4d9ec38ec6f860ad5, type: 3}
       propertyPath: playerRef
       value: 
-      objectReference: {fileID: 3598700777036703483, guid: 028ede032152dcb47830157f5f196d81, type: 3}
+      objectReference: {fileID: 1952508966}
     - target: {fileID: 3010967636647979201, guid: 31954ab24092d2b4d9ec38ec6f860ad5, type: 3}
       propertyPath: m_Name
       value: Hard Enemy (8)
@@ -3353,7 +3353,7 @@ PrefabInstance:
     - target: {fileID: 268261017464736734, guid: 31954ab24092d2b4d9ec38ec6f860ad5, type: 3}
       propertyPath: playerRef
       value: 
-      objectReference: {fileID: 3598700777036703483, guid: 028ede032152dcb47830157f5f196d81, type: 3}
+      objectReference: {fileID: 1952508966}
     - target: {fileID: 3010967636647979201, guid: 31954ab24092d2b4d9ec38ec6f860ad5, type: 3}
       propertyPath: m_Name
       value: Hard Enemy (6)
@@ -4149,7 +4149,7 @@ PrefabInstance:
     - target: {fileID: 268261017464736734, guid: 31954ab24092d2b4d9ec38ec6f860ad5, type: 3}
       propertyPath: playerRef
       value: 
-      objectReference: {fileID: 3598700777036703483, guid: 028ede032152dcb47830157f5f196d81, type: 3}
+      objectReference: {fileID: 1952508966}
     - target: {fileID: 3010967636647979201, guid: 31954ab24092d2b4d9ec38ec6f860ad5, type: 3}
       propertyPath: m_Name
       value: Hard Enemy (5)
@@ -5565,7 +5565,7 @@ PrefabInstance:
     - target: {fileID: 268261017464736734, guid: 31954ab24092d2b4d9ec38ec6f860ad5, type: 3}
       propertyPath: playerRef
       value: 
-      objectReference: {fileID: 3598700777036703483, guid: 028ede032152dcb47830157f5f196d81, type: 3}
+      objectReference: {fileID: 1952508966}
     - target: {fileID: 3010967636647979201, guid: 31954ab24092d2b4d9ec38ec6f860ad5, type: 3}
       propertyPath: m_Name
       value: Hard Enemy (1)
@@ -5736,7 +5736,7 @@ PrefabInstance:
     - target: {fileID: 268261017464736734, guid: 31954ab24092d2b4d9ec38ec6f860ad5, type: 3}
       propertyPath: playerRef
       value: 
-      objectReference: {fileID: 3598700777036703483, guid: 028ede032152dcb47830157f5f196d81, type: 3}
+      objectReference: {fileID: 1952508966}
     - target: {fileID: 3010967636647979201, guid: 31954ab24092d2b4d9ec38ec6f860ad5, type: 3}
       propertyPath: m_Name
       value: Hard Enemy (4)
@@ -6074,7 +6074,7 @@ PrefabInstance:
     - target: {fileID: 268261017464736734, guid: 31954ab24092d2b4d9ec38ec6f860ad5, type: 3}
       propertyPath: playerRef
       value: 
-      objectReference: {fileID: 3598700777036703483, guid: 028ede032152dcb47830157f5f196d81, type: 3}
+      objectReference: {fileID: 1952508966}
     - target: {fileID: 3010967636647979201, guid: 31954ab24092d2b4d9ec38ec6f860ad5, type: 3}
       propertyPath: m_Name
       value: Hard Enemy (9)
@@ -7590,7 +7590,7 @@ PrefabInstance:
     - target: {fileID: 268261017464736734, guid: 31954ab24092d2b4d9ec38ec6f860ad5, type: 3}
       propertyPath: playerRef
       value: 
-      objectReference: {fileID: 3598700777036703483, guid: 028ede032152dcb47830157f5f196d81, type: 3}
+      objectReference: {fileID: 1952508966}
     - target: {fileID: 3010967636647979201, guid: 31954ab24092d2b4d9ec38ec6f860ad5, type: 3}
       propertyPath: m_Name
       value: Hard Enemy (2)
@@ -9047,6 +9047,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6967415054283533815, guid: 314fa006a1640c944a5fc83309109688, type: 3}
   m_PrefabInstance: {fileID: 1944929398}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1952508966 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6984592359943796070, guid: 028ede032152dcb47830157f5f196d81, type: 3}
+  m_PrefabInstance: {fileID: 7092411817593145304}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1973943168
 GameObject:
   m_ObjectHideFlags: 0
@@ -9995,7 +10000,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5490291724152372079, guid: 028ede032152dcb47830157f5f196d81, type: 3}
   m_PrefabInstance: {fileID: 7092411817593145304}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1952508966}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfa0520a7469a01429ec690f3c706f92, type: 3}
