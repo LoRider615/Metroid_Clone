@@ -9827,7 +9827,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3598700777036703483, guid: 028ede032152dcb47830157f5f196d81, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Player and Camera
       objectReference: {fileID: 0}
     - target: {fileID: 3793004002759538304, guid: 028ede032152dcb47830157f5f196d81, type: 3}
       propertyPath: m_LocalPosition.x
