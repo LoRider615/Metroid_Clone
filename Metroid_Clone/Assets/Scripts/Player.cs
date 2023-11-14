@@ -135,7 +135,7 @@ public class Player : MonoBehaviour
         }
         if (other.gameObject.tag == "Jetpack")
         {
-            jumpForce += 3;
+            jumpForce += 5;
         }
         if (other.gameObject.tag == "HealthPickup")
         {
